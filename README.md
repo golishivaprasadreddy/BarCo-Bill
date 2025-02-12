@@ -18,42 +18,42 @@ A barcode scanner application built with **React.js** and **Vite**, designed for
 Make sure you have **Node.js** installed (v16+ recommended).  
 
 ### **1️⃣ Clone the Repository**
-```bash
+
 git clone https://github.com/golishivaprasadreddy/BarCo-Bill.git
 cd BarCo-Bill
-```
+
 
 ### **2️⃣ Install Dependencies**
-```bash
+
 npm install
-```
+
 or if using **yarn**:
-```bash
+
 yarn install
-```
+
 
 ---
 
 ## **💻 Running the Project**
 ### **Development Mode**
-```bash
+
 npm run dev
-```
+
 or  
-```bash
+
 yarn dev
-```
+
 The application will be available at **`http://localhost:5173/`** (default for Vite).
 
 ### **Production Build**
 To generate an optimized production build:
-```bash
+
 npm run build
-```
+
 or  
-```bash
+`
 yarn build
-```
+
 
 ---
 
@@ -69,7 +69,7 @@ yarn build
 - **Frontend**: React.js, Vite  
 - **Styling**: Tailwind CSS  
 - **State Management**: React Hooks  
-- **Barcode Scanner**: [QuaggaJS](https://serratus.github.io/quaggaJS/) (or any other library)  
+- **Barcode Scanner**: zxing/browser
 
 ---
 
