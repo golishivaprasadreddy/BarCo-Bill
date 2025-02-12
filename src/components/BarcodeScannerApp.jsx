@@ -38,10 +38,12 @@ const BarcodeScannerApp = () => {
 
   const stopScanner = () => {
     if (controls.current) {
-      controls.current.stop();
+      controls.current.then((c) => c.stop()).catch((err) => console.error("Error stopping scanner:", err));
+      controls.current = null;
     }
     if (videoRef.current && videoRef.current.srcObject) {
       videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+      videoRef.current.srcObject = null;
     }
     setCameraStarted(false);
   };
@@ -100,13 +102,49 @@ const BarcodeScannerApp = () => {
   };
 
   const printReceipt = () => {
-    let receipt = `🛒 Transaction ID: ${transactionId}\n\nItems Purchased:\n`;
-    items.forEach((item) => {
-      receipt += `🔹 ${item.name} - ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
-    });
-    receipt += `\nTotal: ₹${items.reduce((sum, item) => sum + item.price * item.quantity, 0)}\n`;
-    
-    window.print();
+
+    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const receiptWindow = window.open('', '_blank');
+    receiptWindow.document.write(`
+      <html>
+        <head>
+          <title>Invoice</title>
+          <style>
+            body { font-family: Arial, sans-serif; padding: 20px; }
+            h2 { text-align: center; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { border: 1px solid black; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+          </style>
+        </head>
+        <body>
+        <center>
+        <h1 >BarCo Bill</h1>
+        </center>
+          <h2>Invoice</h2>
+          <p><strong>Transaction ID:</strong> ${transactionId}</p>
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Price (₹)</th>
+              <th>Total (₹)</th>
+            </tr>
+            ${items.map(item => `
+              <tr>
+                <td>${item.name}</td>
+                <td>${item.quantity}</td>
+                <td>${item.price}</td>
+                <td>${(item.price * item.quantity).toFixed(2)}</td>
+              </tr>
+            `).join('')}
+          </table>
+          <h3>Total: ₹${total.toFixed(2)}</h3>
+          <script>window.print();</script>
+        </body>
+      </html>
+    `);
+    receiptWindow.document.close();
   };
   
 
