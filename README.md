@@ -1,6 +1,4 @@
-Here’s a **README.md** file for your **BarCo-Bill** project. This README includes installation instructions, usage details, and contribution guidelines.  
 
----
 
 ### **📌 BarCo-Bill**
 A barcode scanner application built with **React.js** and **Vite**, designed for seamless barcode reading and integration.
@@ -102,11 +100,3 @@ BarCo-Bill/
 ## **📄 License**
 This project is licensed under the **MIT License**.
 
----
-
-## **📞 Contact**
-For any queries or suggestions, reach out at **gspreddy6869@gmail.com**.  
-
----
-
-Would you like any additional sections, such as API integration or screenshots? 🚀
