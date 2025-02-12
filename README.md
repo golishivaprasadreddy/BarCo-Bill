@@ -8,7 +8,6 @@ A barcode scanner application built with **React.js** and **Vite**, designed for
 ## **🚀 Features**
 ✅ Scan barcodes using a camera or file upload  
 ✅ Real-time barcode detection  
-✅ Responsive design for mobile and desktop  
 ✅ Fast and efficient performance with **Vite**  
 ✅ Easy integration with inventory or billing systems  
 
@@ -73,21 +72,6 @@ yarn build
 
 ---
 
-## **📌 Folder Structure**
-```
-BarCo-Bill/
-│── public/                # Static assets
-│── src/
-│   ├── components/        # React components (BarcodeScanner.jsx)
-│   ├── assets/            # Images and icons
-│   ├── App.jsx            # Main app component
-│   ├── main.jsx           # Entry point
-│── package.json           # Dependencies and scripts
-│── vite.config.js         # Vite configuration
-│── README.md              # Project documentation
-```
-
----
 
 ## **🤝 Contribution Guidelines**
 1. Fork the repository.  
