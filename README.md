@@ -19,6 +19,7 @@ Make sure you have **Node.js** installed (v16+ recommended).
 ### **1️⃣ Clone the Repository**
 
 git clone https://github.com/golishivaprasadreddy/BarCo-Bill.git
+
 cd BarCo-Bill
 
 
