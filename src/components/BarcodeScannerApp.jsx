@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+ import React, { useState, useEffect, useRef } from "react";
 import { BrowserMultiFormatReader } from "@zxing/browser";
 
 const BarcodeScannerApp = () => {
@@ -208,5 +208,4 @@ const BarcodeScannerApp = () => {
   );
 };
 
-export default BarcodeScannerApp;
- 
+export default BarcodeScannerApp;   
