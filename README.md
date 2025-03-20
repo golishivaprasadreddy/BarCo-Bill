@@ -66,6 +66,7 @@ yarn build
 ---
 
 ## **🛠️ Technologies Used**
+
 - **Frontend**: React.js, Vite  
 - **Styling**: Tailwind CSS  
 - **State Management**: React Hooks  
